@@ -1,0 +1,76 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Assessing the Usefulness of NetworkDissection on Small Neural Networks with Small Feature Sets}
+
+\section{Overview}
+The goal of this thesis was to ascertain the usefulness of the NetworkDissection method on a smaller network with a smaller feature set. To do so, I used two facial characterization networks as the target for Network Dissection. 
+
+NetworkDissection probes for disentangled features in a deep neural n
+
+
+
+\section{Quantifying Facial Characteristic Interpretability Using Network Dissection}
+
+\section{Experimental Setup}
+To quantify the interpretability of facial recognition network I probed three facial characterization networks with two datasets. The first goal was to determine if disentangled facial features showed up in pre-trained models. The second goal was to determine differences in results between different architectures, training task, and network output.
+
+\subsection{Datasets}
+Two datasets were used to determine the interpretability of the networks being probed. The first was the Broden dataset constructed for the NetworkDissection experiments described in the paper. The second was a dataset specifically created representing facial features and skin tones. The Broden dataset was described in the previous chapter on Network Dissection.
+
+\subsubsection{Broden Dataset}
+\textbf{Move to Network Dissection Chapter}
+The Broden dataset was compiled using the ADE, PASCAL, PASCAL Parts, PASCAL Context, OpenSurfaces, and DTD datasets. Broden generated segmentations of each image in the dataset that labelled each pixel with one or more label for the category the pixel represents: color, part, object, or texture.
+
+\subsubsection{Facial Feature Dataset Generation}
+Two disparate datasets were used to generate the \textbf{Note: I need a name for this dataset} BrodenFace dataset. I used the Labelled Faces in the Wild dataset with dlib\vtick s 68 coordinate facial landmark detector to label disengtangled units of a face. Specifically, I labelled the eyes, eyebrows, nose, mouth, and jaw features. I used dlib\vtick s facial bounding box feature to label a face attribute.
+
+The labels for the lfw dataset were stored in two generated files. The first, denoted with the suffix appended to the original filename \vtick \textunderscore face\vtick contained indicated the pixels in the image corresponding to the individual\vtick s face. The second, denoted similarly with the suffix \vtick \textunderscore facepart\vtick contained the pixels labelled for the distinct facial features.
+
+The process to generate the labels proceeded as follows. For each image in the lfw dataset, use the dlib library\vtick s bounding box feature to identify the part of the image with the face. An image with BGR values (0,0,0) is created with the same size as the face image. The pixels in the new image that correspond to the pixes in the bounding box on the original image are given an BGR value of (0,0,1). The new image is then saved in BGR format.
+
+In the second step of the process we provided labels for the facial features, I used the dlib facial landmark detector to identify the areas of the face corresponding to the eyes, eyebrows, nose, mouth, and jaw in the image. I used the opencv module to to set BGR values on the enclosed pixels in the respective regions. The BGR values used to label the facial regions are indicated in \textbf{Table x}.
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Facial Region} & \textbf{BGR Value}\\
+    \hline
+    mouth & (0,0,1)\\
+    \hline
+    eyebrow & (0,0,2)\\
+    \hline
+    eye & (0,0,3)\\
+    \hline
+    nose & (0,0,4)\\
+    \hline
+    jaw & (0,0,5)\\
+    \hline
+  \end{tabular}
+  \caption{BGR Values Corresponding to Facial Features}
+  \label{tab:template}
+\end{table}
+
+
+\subsubsection{Skin Tone Dataset Generation}
+The dataset of skin tone images was compiled from the UCI skin tone segmentation dataset. The dataset contained the 245057 samples of BGR values corresponding to both skin tone and not skin tones from face images. For the purposes of skin segmentation, I used the 50859 samples of skin tone BGR values.
+\\
+\\
+Using eighteen representative RGB values for skin tone, I grouped the skin tone samples by Euclidean distance. For each of the values in the dataset, its distance to each representative color group was calculated. The sample was placed into the group it was closest to. For each grouped sample, I used OpenCV to create a 227x227 image with each pixel\vtick s RGB value that of the dataset. The designated grouping of the sample was denoted in the filname for the generated image. The nomenclature used for the skin tone groupings where \vtick color0\vtick \ to \vtick color19\vtick. Each sample was named according to its grouping and sample number (i.e. \vtick color0\textunderscore 0.jpg\vtick).
+\\
+\\
+\textbf{Table X} shows the number of samples that were assigned to each grouping.
+
+\textbf{Figure X} shows samples from each grouping of skin tones.
+
+\subsection{Generating Segmentations for Network Dissection}
+
+
+
+
+\subsection{Models Interrogated}
+\section{Results}

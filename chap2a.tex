@@ -1,0 +1,59 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\newcommand*\vtick{\textquotesingle{}}
+\chapter{Related Policy Research}
+
+\section{Policy Research Concering Algorithmic Explainability and Interpretability}
+The currenty state of interpretability research is being driven completely by technologists. There is clearly a movement in the machine learning community towards establishing techniques to understand deep neural networks and to have networks explain the decisions they make. However, the outputs of these methods, and their effectiveness in real-world practice is hard to establish. This is because the effectiveness of an explanation of an algorithm's output is inherently context dependent. The end user of the model must be able to understand the output and the domain in which the model is being used will dictate the individual using it. An explanation to a mechanic regarding a decisions a self-driving car made will necessarily be different from an explanation required in explaining why a particular individual was given a certain likelihood of defaulting on a loan (ED Note: These are completely contrived examples off the top of my head. WIP).
+
+
+This is an area where policy makers will need to give input on which types of networks need to explain themselves and which do not. For example, do we need a network that outperfroms radiologists in identifying certain attributes to explain why? Especially if the network has gone through existing regulatory procedures with the FDA? Moreover, depending on the context algorithms are used, policy makers can help inform the types of explanations that would be most helpful and necessary for use of the model.
+
+
+However, policy guidance and research on explainable artificial intelligence is limited. There are no clear guidelines for what it means for an algorithm to explain, or justify, its decision, nor whether such explanation would be helpful or necessary in a given context. The closest guidance policy makers have given is the European Union's General Data Protection Regulation (GDPR) that mandates a 'right to an explanation' or all fully automated algorithmic decisions. What an explanation is in the context of the GDPR is the closest policy makers have come to establishing specific criteria for machine learning applications.
+
+We are not without hope, nor are we completely in the dark. Recent papers have discussed regulation of machine learning, the impacts of GDPR, and when explanations in machine learning are necessary.
+
+\subsection{General Regulation of Machine Learning Algorithms}
+http://www2.datainnovation.org/2018-algorithmic-accountability.pdf 
+
+
+This paper argues for a light regulatory touch to machine learning models in order to promote their widespread use. The authors use the regulator decisions such as Section 230 of the CDA and the Tax Freedom Act as light touch regulation that allowed the internet (then a nascent technology) to prosper and become widespread.
+
+They contend that calls to mandate explanations of model outputs will hinder adoption even though these models are more accurate. They also contend that calls for business to publish source code will raise IP concerns and do nothing to promote fairness or remove bias. What is particularly interesting, is that while they say models should not be forced to explain decisions, they say regulators should promote 'algorithmic accountability' which they define as: ``the principle that an algorithmic system should employ a variety of controls to ensure the operator can verify it acts in accordance with its intentions, as well as identify and rectify harmful outcomes.''
+
+What I think is a significant oversight of this paper is their contention that it is possible for the operator of an algorithm to claim they have acted responsibly to minimize harms (in the event they should arise), without establishing how and why the model is behaving as it is.  It also seems challenging to me, that the end user of an algorithm can verify they are acting in accordance with the algorithm's intentions without knowing why a certain decision was made.
+
+While I am not convinced every algorithm needs to explain itself, explanations for sensitive networks could help verify its behavior.
+
+\subsection{GDPR and the Right to an Explanation}
+There are several papers about what exactly this provision will entail. However, guidelines were released from the working committee on what the requirements are on a controller making automated decisions:
+\begin{enumerate}
+  \item tell the data subject that they are engaging in this type of activity;
+  \item provide meaningful information about the logic involved; and
+  \item explain the significance and envisaged consequences of the processing.
+\end{enumerate}
+
+Ultimately, the biggest policy need for explanations of ML applications is coming from Europe and the GDPR and how it is enforced and how companies aim to comply with the regulation is going to direct what happens next in this area (at least in the absence of US intervetion/guidelines) (ED hot take)
+
+
+\subsection{When are Explanations Necessary}
+https://arxiv.org/pdf/1702.08608.pdf
+
+This paper from a Haravard Professor and Been Kim (MIT Phd, Google Brain) included the following: \textbf{``Explanation is not
+necessary either because (1) there are no significant consequences for unacceptable results or (2)
+the problem is sufficiently well-studied and validated in real applications that we trust the system's
+decision, even if the system is not perfect''}
+
+And follows up with: \textbf{``So when is explanation necessary and appropriate? We argue that the need for interpretability
+stems from an incompleteness in the problem formalization, creating a fundamental barrier to
+optimization and evaluation.''}
+
+
+I think this really gets to the heart of why explainability is important and it's because we don't have procedures to establish trust and validation of algorithms in the real world. From the nature piece Hal sent out (https://www.nature.com/articles/d41586-018-05469-3) - ``One big obstacle to accountability is that agencies often do not collect data on how the tools are used or their performance,'' says Goel. ``A lot of times there\vtick s no transparency because there\vtick s nothing to share.''
+
+We are now using black box models where there used to just be human judgement. These models are also being used now in conjunction with human judgement. However, it is not clear how a human can interpret a score (at least not clear to me), without understanding how that score came to be. If a model outputs a child is likely being abused and the reason is that her parent was a prior felony conviction, then if the human making the judgement call knows the parent has been reformed or it was a felony conviction decades ago, they can adjust their interpretation of the score differently than if the model is weighting other factors.

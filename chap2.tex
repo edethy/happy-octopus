@@ -1,0 +1,53 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Related Work}
+
+\section{Related work on interpretability and explainations}
+Technical interpretability methods tend to fall into one of three categories. 
+\begin{enumerate}
+  \item Saliency Mapping
+ \end{enumerate}
+
+\subsection{Technical Interpretability Methods}
+
+
+
+\subsection{Facial Recognition Interpretability}
+There is research into optimizing networks for providing interpretable facial recognition systems. The goal of these networks is not to be interpretable, but to serve some othertask; such as facial recognition when part of the face is occluded.
+\section{Related Policy Work}
+
+Four categories of grappling with the question of policy requirements around the black-box nature of AI
+\begin{enumerate}
+  \item Master regulatory framework for all algorithms is not necessary at this stage. It is premature and there are already existing regulations for high trust contexts
+  \item We can achienve policy aims without needed to know the internals of the network. There are input/output tests we can do to establish fairness or bias if that's what we care about.
+  \item What are the implications of the GDPR in this context? What does it mean and how achievable are explanations for these systems
+  \item Technical work on why we want interpretability that provides excellent rational but no conrete policy context
+\end{enumerate}
+
+
+For each of these, there are a few papers that we can point to.
+
+\subsection{First Category}
+For the first, http://www2.datainnovation.org/2018-algorithmic-accountability.pdf establishes that regulation of ML at this stage would hinder adoption. However, it does note the importance of ensuring an operator can verify it acts in accordance to its intentions as well as identify and rectify harms. The recommendation from this group seems to be to continue to establish regulation as it is done today - where it is required, targeting specific harms in specific application areas through dedicated regulator bodies that are already charged with oversight of the particular sector.
+
+
+ED Take
+\begin{itemize}
+  \item Agree with the philosophy, disagree with their proposal. In order for algorithmic accountability to be achieved, there must be some overarching if not regulation, guidelines for adoption in high trust areas. There are not regulations to oversee the use of black-box algorithms in sentencing decisions or facial recognition, yet we see that it is not possible for the operator to act in accordance with the algorithms intentions. This is, of course, assuming the intention of the algorithm is not to be biased against certain groups.
+\end{itemize}
+
+\subsection{Second Category}
+
+\subsection{Third Category}
+
+\subsection{Fourth Category}
+
+
+
+\subsection{Takeaways and requirements for explainability}
+I think the key thing to enumerate, for the purpose of this thesis, is an area in which an operator is unable to ensure they are acting in the way the algorithm intended and identifying and rectifying harms and it causes harm to an individual. For example, we don't know why certain individuals were classified as likely to reoffend in COMPAS.
+

@@ -1,0 +1,61 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\newcommand*\vtick{\textquotesingle{}}
+\chapter{Related Policy Research}
+
+\section{Policy Research Concering Algorithmic Explainability and Interpretability}
+High-level thoughts and impressions from research
+\begin{enumerate}
+  \item Technologists are driving the state of interpretability research
+  \item Technologists are creating what they believe to be interpretability and explanability definitions in the absence of clear policy areas or motivations
+  \item Policy makers, when thinking about the interpretability of models are doing so in the context of the EU GDPR and the right to an explanation. The working party has issued guidelines/clarifications on that requirement, but it seems policy makers don't know how it will be satisfied by industry or tested in the courts
+  \item Some policy groups worry about taking a heavy handed approach to regulating AI systems and think explanability requirements will hinder the deployment and use of technologies with better accuracy
+  \item Been Kim and Finale Doshi-Velez (Google Brain and Harvard, respectively) provide, I think, an excellent idea for when explanations aren't necessary and when they become necessary in ML practice
+  \item I think the area where explanations are most important are where machine learning algorithms are being used to supplant or at least enhance human decision making processes in areas that used to rely on human judgement. For example, determining whether or not a child is at risk for abuse, predicting recidivism rates, etc. These are areas of high trust where I don't think an individual can effectively engage with the algorithm without understanding it\vtick s decision.
+\end{enumerate}
+\subsection{General Regulation of Machine Learning Algorithms}
+http://www2.datainnovation.org/2018-algorithmic-accountability.pdf 
+
+\begin{enumerate}
+\item advocates for light regulator touch to promote wide spread use
+\item favorable comparisons made to Section 230 and the Tax Freedom Act and the policy/regulatory decisions that promoted wide use of the internet
+\item Mandating explanations will hinder adoption of algorithms even though the models can be more accurate
+\item Regulators should promote ``algorithmic accountability'' which they define as ``the principle that an algorithmic system should employ a variety of controls to ensure the operator can verify it acts in accordance with its intentions, as well as identify and rectify harmful outcomes.''
+
+
+ \end{enumerate}
+
+ I think the algorithmic accountability angle is interesting angle to consider. How possible is it for an individual to evaluate a score they are given, and contextualize it with the knowledge they have, if they don\vtick t know the reasons for the value?
+
+
+\subsection{GDPR and the Right to an Explanation}
+There are several papers about what exactly this provision will entail. However, guidelines were released from the working committee on what the requirements are on a controller making automated decisions:
+\begin{enumerate}
+  \item tell the data subject that they are engaging in this type of activity;
+  \item provide meaningful information about the logic involved; and
+  \item explain the significance and envisaged consequences of the processing.
+\end{enumerate}
+
+Ultimately, the biggest policy need for explanations of ML applications is coming from Europe and the GDPR and how it is enforced and how companies aim to comply with the regulation is going to direct what happens next in this area (at least in the absence of US intervetion/guidelines)
+
+
+\subsection{When are Explanations Necessary}
+https://arxiv.org/pdf/1702.08608.pdf
+
+This paper from a Haravard Professor and Been Kim (MIT Phd, Google Brain) included the following: \textbf{``Explanation is not
+necessary either because (1) there are no significant consequences for unacceptable results or (2)
+the problem is sufficiently well-studied and validated in real applications that we trust the system's
+decision, even if the system is not perfect''}
+
+And follows up with: \textbf{``So when is explanation necessary and appropriate? We argue that the need for interpretability
+stems from an incompleteness in the problem formalization, creating a fundamental barrier to
+optimization and evaluation.''}
+
+
+I think this really gets to the heart of why explainability is important and it's because we don't have procedures to establish trust and validation of algorithms in the real world. From the nature piece Hal sent out (https://www.nature.com/articles/d41586-018-05469-3) - ``One big obstacle to accountability is that agencies often do not collect data on how the tools are used or their performance,'' says Goel. ``A lot of times there\vtick s no transparency because there\vtick s nothing to share.''
+
+We are now using black box models where there used to just be human judgement. These models are also being used now in conjunction with human judgement. However, it is not clear how a human can interpret a score (at least not clear to me), without understanding how that score came to be. If a model outputs a child is likely being abused and the reason is that her parent was a prior felony conviction, then if the human making the judgement call knows the parent has been reformed or it was a felony conviction decades ago, they can adjust their interpretation of the score differently than if the model is weighting other factors.

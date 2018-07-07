@@ -1,0 +1,31 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Related Work}
+
+
+\section{Technical Explainability}
+In this section I will briefly discuss explainability approaches in the technical literature. There is ongoing work in both the technical and
+policy communities to define the term. The techniques discussed in this section are those that aim to provide insight into how the model produces
+a result by understanding the internals of the network. I then discuss approaches recent approaches to create interpretable facial recognition networks. 
+The explainabiulity techniques I will discuss are explanation generation, salience mapping, and representation analysis.
+
+\subsection{Explanation Generation}
+Explanation generation is a technique used to provide human-readable explanations for the decisions of a neural network. As the network is trained on the desired task, a second network is trained using textual explanations to generate an explanation. Models trained in this way perform well on the assigned task and providing a human understandable explanation. Despite this, adding a second neural network to generate the explanation increases the complexity of the overall model and it is not known if the generated explanations are correct or merely producing explanations that sound good to a human.
+
+\subsection{Salience Mapping}
+Salience mapping is a technique used primarily in deep neural networks for computer vision problems to identify features in an image relevant to classifying it.  The output is a heat map of input sensitivity.
+
+For a given image, portions of the image are occluded to determine which regions affect the network's output. Salience mapping provides useful information to understand why the network made a particular classification. However, salience mapping does not provide insight into the higher level decision making of the network such as why a network classified a cat image as a cat and a bird image as a bird. 
+
+
+
+\subsection{Representation Analysis}
+Representation analysis pertains to determining learned concepts in the hidden units of the network. The goal is to, for a given network, determine the concepts individual layers in the network learn. The technique to do this is called NetworkDissection and it is discussed in greater detail in \textbf{Section X}. I used the network dissection method to provide the interpretability of facial characterization networks. 
+
+\subsection{Facial Recognition Interpretability}
+
+Work is being done in this space as well.
