@@ -6,9 +6,25 @@
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Network Dissection}
 
-\section{Overview}
-Network Dissection is a technique to quantitatively identify human-interpretable concepts learned by a neural network.
+Network Dissection is a technique to quantitatively identify human-interpretable concepts learned by a neural network created at MIT by Bolei Zhou and David Bhao.
+Network Dissection uses a set of semantic concepts to align those concepts with the representations learned by individual convolutional filters of a deep neural network.
+It aligns the semantic concepts of a provided dataset against the activated sections of images obtained by a forward pass through the network.
 
-\subsection{Broden Dataset}
+Network Dissection proceeds in six steps, including preprocessing to construct the dataset. The preprocessing step takes a set of datasets with labels and generates a \textbf{Broad and Densely Lablled Databset (Broden)}. The second through fifth steps obtain the activation maps for each image in the dataset passed through the network and identify the label that best matches the activated parts of the images. 
+The final steps rank the interpretability of each unit using Intersection Over Union and creating a visualization of the interpretable units.
 
-\subsection{}
+
+\subsection{Generating Densely Labelled Dataset with Segmentations}
+
+
+
+\subsection{Forward Pass to get Activation Layer}
+Each image in the generated dataset is run through a forward pass to the desired convolutional layer of the network being interrogated.
+If multiple convolutional layers are being examined, a forward pass is completed to each of the desired layers.
+The output of the forward pass is an activation map that is saved in a mmap file to be used in the next step.
+
+\subsection{Calculation of Distribution of Individual Unit Activations}
+For each unit, the quantiles of the activation maps are sorted and saved. The top 0.5\% activation maps for each unit are used in further evaluation to idenfity and label any disentangled concepts for the unit.
+\\
+\\
+Each of the activation maps in the 0.005 quantile are scaled up using bilinear interpolation to the size of the original image. The interpolants are anchored at the center of the unit\vtick s receptive field.

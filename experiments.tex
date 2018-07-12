@@ -67,10 +67,20 @@ Using eighteen representative RGB values for skin tone, I grouped the skin tone 
 
 \textbf{Figure X} shows samples from each grouping of skin tones.
 
-\subsection{Generating Segmentations for Network Dissection}
+\subsection{Generating BrodenFace Dataset}
+The BrodenFace dataset used to probe the facial characterization networks contained labelled images from the facial feature dataset, skin tone dataset, and the dtd dataset. The facial feature and skin tone datasets have been described in the previous two sections. The DTD dataset is a collection of textures in the wild.
 
+I enhanced the joinseg utility in NetworkDissection to create segementations for the new facial feature, skin tone, and dtd datasets. 
+\\
+The final dataset contained labelled examples of the following categories: face\textunderscore part, skintone, texture, and color.
 
+\textbf{add description of what it does here}
 
 
 \subsection{Models Interrogated}
+Two open-source pre-trained facial characterization networks were probed. Both were created and trained by Gil Levi, et. al, and described in the paper, \vtick Age and gender classification using convolutional neural networks\vtick.
+\\
+\\
+Both networks were convolutional neural networks with the same architecture. \textbf{describe the network architecture}
+
 \section{Results}

@@ -1,0 +1,64 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{Motivation}
+The goal of this thesis is to begin to bridge the gap between the policy community\vtick s work on machine learning accountability and the technical research into explainability. There are gaps in both the policy considerations of the explainability of machine learning as well as the technical research in the area\\\\
+At a high level, in this section these are what I want the take-aways to be
+\begin{enumerate}
+  \item There is a disconnect in the assumptions and direction in the technology explainability research
+  \item There is a profound lack of policy direction in requiring explanations for the use of these models (the focus has not been on explainability but rather accountability in general with different groups skewing to more or less regulation)
+  \item Technologists claim humans may not trust the technology without understanding how it produces it outputs, but the prevalence of such models proves otherwise
+  \item Technologists need to push the boundaries and limits of their explainability techniques, ideally to policy relevant areas and policy people need to realize that explainability should be written off as technically infeasible
+  \item Research in this area is limited by the ``sample of one'' problem and the lack of consistency around definitions and how to quantify explainability
+\end{enumerate} 
+
+
+Setting aside, for a moment, the European Union\vtick s General Data Protection Regulation that seems to enshrine a ``right to an explanation'', no laws exist to specifically regulate the use of machine learning in sensitive contexts.
+Areas of policy where laws may require the explainability of automated decision are only those for areas where explanations are already required.
+The vagueness of the GDPR, and the anticipation that the courts will be left to decide what ultimately counts as a valid explanation for an automated decision, has left researchers to create their own definitions of explainability and the reasons why explainability is necessary for machine learning algorithms.\\\\
+The extensive work undertaken by researchers to increase human trust in these algorithms has proceeded alongside calls for increased fairness and transparency in cases where opaque algorithms are used. In the past two years, numerous examples of bias in widely used algorithms has gained widespread attention.
+The first was Julia Angwin\vtick s ProPublica piece analyzing bias in the Correctional Offender Management Profiling for Alternative Sanctions (COMPAS), a criminal assessment tool. The second was work by Joy Bowlami at MIT who revealed bias in the gender identifier algorithms provided by four major technology companies.\\\\
+The public response, primarily outcry over the discriminatory nature of supposed objective systems, has led to new working papers on algorithmic accountability for think tanks, researchers, and non profits. An interdisciplinary effort at Harvard between the Law School, the School of Engineering and Applied Sciences, the Department of Psychology and Center for Brain Science, and the Ceneter for Internet and Society, produced a paper explaining what they believed to be the role of the explaination in AI Accountability.\\\\
+%%TODO Different examples of interpretability and explainability
+There is an assumption in the technical literature and new reports about explainability in machine learning that a human cannot trust the output of a model if they do not understand how it reaches its decision.
+While this may be true, opaque algorithms are used by human decision makers in extremely sensitive contexts today. Cities across the country have used criminal risk assessments in sentencing and black-box models to predict if a child is at-risk of mistreatment.
+In each of the aforementioned uses, a human is ultimately responsible for using the output of the algorithm in making a decision about an individual\vtick s life. In the former case, how long the defendent should spend in jail, and in the latter case, whether the child\vtick s family needs to be visited and monitored by a social worker.\\\\
+Clearly, there is a gap if technology researchers claim a human cannot effectively use the output of an algorithm without understanding how it made its decision, yet the models are used in highly sensitive areas where individuals use the models even without understanding how the output was produced.\\\\
+
+
+%%TODO Alleghany County went with a statistic model (logistic regression) because it was less of a black box and could provide a score not to be used automatically but to be used in conjunction with human judgement
+
+%%TODO Decide if this is relevant (it probably is), and where it should go
+%Increasing the pressure on policy makers and researchers alike, is the prevalence of machine learning algorithms in everything from making health care decisions to predicting recidivism rates, to determining if a child may be in an at-risk home. Currently, there is little established procedure in cities around the country in using machine learning. Some in the pol
+
+
+\chapter{Importance of Explanations in Real-World Usage}
+Main take aways for this chapter or flow for this chapter
+\begin{enumerate}
+  \item In areas where there is little to no oversight, and humans are using the output of black box algorithms in sensitive areas, explanations should be required for all model outputs
+  \item Specifically, child services or some other extremely sensitive area
+  \item There is precedence for establishing humans must be able to effectively use the technology tools at their disposal (esp human factors in flight deck design - though I see that this could be too off topic and not the most relevant example)
+  \item There is also precendece for government regulation driving the technology forward rather than hamstringing it. See fuel efficiency standards that resulted in manufacturers producing cars that produced less smog. Regulation does not always hamper an industry or adoption of technology, even if some say it will
+\end{enumerate}
+
+There are established precedents for creating regulations and guidelines to ensure humans can safely and effectively utilize the technology at their disposal.
+This includes both training measures for the individuals who will be using the technology as well as requirements of the technology itself.
+A critical example of this is aircraft flight deck equipment design. The Federal Aviation Association publishes explicit guidelines for creating compliant flight deck system controls.
+
+A circular published by the FAA in 2011 aimed to provide ``guidance for the installation and airworthiness approval of flight deck system control devices, from a primarily human factors perspective.'' Federal regulations mentioned in published in the appendix of the report mandate things like, ``Each control must operate with the ease, smoothness, and positiveness appropriate to its function'' and ``Controls must be located, arranged, and identified to prevent the possibility of confusion and subsequent inadvertent operation.''
+Aircraft systems, even as automated as they are today, still rely on a pilot\vtick s understanding to safely and effectively work. 
+
+While the guidance on producing explanations for machine learning networks is minimal, there has been increased focus in the literature on two concepts.
+Firstly, the GDPR and the ``right to an explanation'', and secondly, the best way to realize the benefits of machine learning in many problem areas while providing for accountability and fairness in their use.
+The discussion of fairness and accountability was sparked by Julia Angwin\vtick s ProPublica piece that purported there was systemic bias in the COMPAS system against black individuals. More recently, Joy Bowlami at MIT demonstrated bias against black females in the facial recognition algorithms provided by four major technology companies.
+Additionally, the role machine learning plays in everything from health care decisions to determining if a child is in an at-risk home, has increased the prevalence of these opaque algorithms in our everyday lives.
+
+
+%% the explanations people give in their papers for why explainability is important
+%% GDPR and the right for an explanation
+%% 
+
+
